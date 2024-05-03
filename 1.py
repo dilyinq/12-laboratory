@@ -10,7 +10,7 @@ class Restaurant:
         print(f"Тип кухни: {self.cuisine_type}")
 
     def open_restaurant(self):
-        res = random.randint(0, 1)
+        res = random.randint(0, 1) # случайное значение от 0-1
         if res == 1:
             res1 = "открыт"
         else:
@@ -32,6 +32,6 @@ newRestaurant.open_restaurant()
 
 # Создаем экземпляр IceCreamStand
 icecream_stand = IceCreamStand("Sweet Treats", "Ice Cream")
-icecream_stand.flavors = ["Ванильное", "Шоколадное", "Клубничное"]
+icecream_stand.flavors = ["Ванильное", "Шоколадное", "Клубничное", "Мятное"]
 
 icecream_stand.display_flavors()

@@ -91,6 +91,6 @@ for i in range(0, kolvo_types):
     ice_cream_type=input("Введите новый тип мороженого: ")
     icecream_stand.add_ice_cream_type(ice_cream_type)
 
-# Обновляем часы работы
-new_hours=input("Введите новые часы работы: ")
-icecream_stand.update_hours(new_hours)
+
+print(icecream_stand.location)
+print(icecream_stand.hours)
