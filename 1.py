@@ -1,22 +1,37 @@
+import random
 class Restaurant:
-    def __init__(self, name, cuisine_type):  # метод __init__
-        self.name = name # self ссылка на экземпляр объекта
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
         self.cuisine_type = cuisine_type
+        self.flavors = []
+
     def describe_restaurant(self):
-        print(f"The restaurant {self.name} serves {self.cuisine_type} cuisine.")
+        print(f"Название ресторана: {self.restaurant_name}")
+        print(f"Тип кухни: {self.cuisine_type}")
+
+    def open_restaurant(self):
+        res = random.randint(0, 1)
+        if res == 1:
+            res1 = "открыт"
+        else:
+            res1 = "закрыт"
+        print(f"Ресторан {self.restaurant_name} {res1}")
+
 
 class IceCreamStand(Restaurant):
-    def __init__(self, name, cuisine_type, flavors):  # атрибут flavors
-        # super позволяет получить доступ к атрибутам, ссылка на тип класса
-        super().__init__(name, cuisine_type)
-        self.flavors = flavors
-
     def display_flavors(self):
-        print("Ice cream flavors available:")
-        for flavors in self.flavors:
-            print(flavors)
+        print("Доступные вкусы:")
+        for flavor in self.flavors:
+            print(flavor)
+newRestaurant = Restaurant("Душа Востока", "грузинская")
 
-# создается объект ice_cream_stand класса icecreamstand c аргументами name b flavors
-ice_cream_stand = IceCreamStand("Sweet Treats", "Ice Cream", ["Vanilla", "Chocolate", "Cherry", "Mint"])
-ice_cream_stand.describe_restaurant()
-ice_cream_stand.display_flavors()
+
+# Вызываем оба метода
+newRestaurant.describe_restaurant()
+newRestaurant.open_restaurant()
+
+# Создаем экземпляр IceCreamStand
+icecream_stand = IceCreamStand("Sweet Treats", "Ice Cream")
+icecream_stand.flavors = ["Ванильное", "Шоколадное", "Клубничное"]
+
+icecream_stand.display_flavors()
